@@ -32,7 +32,7 @@ class MongoPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        # self.db[item.collection].insert_one(dict(item))
+        self.db[item.collection].insert_one(dict(item))
         print('save', dict(item))
         self.logger.debug('save' + str(dict(item)))
         print('self.db[item.collection]: ', self.db[item.collection])
